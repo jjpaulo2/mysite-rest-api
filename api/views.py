@@ -1,4 +1,4 @@
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet
 from api.models import ( Sobre, 
                          ParagrafoDescricao, 
                          RedeSocial, 
@@ -16,30 +16,30 @@ from api.serializers import ( SobreSerializer,
 
 # Create your views here.
 
-class SobreViewSet(ModelViewSet):
+class SobreViewSet(ReadOnlyModelViewSet):
     queryset = Sobre.objects.all()
     serializer_class = SobreSerializer
 
-class ParagrafoDescricaoViewSet(ModelViewSet):
+class ParagrafoDescricaoViewSet(ReadOnlyModelViewSet):
     queryset = ParagrafoDescricao.objects.all()
     serializer_class = ParagrafoDescricaoSerializer
 
-class RedeSocialViewSet(ModelViewSet):
+class RedeSocialViewSet(ReadOnlyModelViewSet):
     queryset = RedeSocial.objects.all()
     serializer_class = RedeSocialSerializer
 
-class ExperienciaViewSet(ModelViewSet):
+class ExperienciaViewSet(ReadOnlyModelViewSet):
     queryset = Experiencia.objects.all()
     serializer_class = ExperienciaSerializer
 
-class EducacaoViewSet(ModelViewSet):
+class EducacaoViewSet(ReadOnlyModelViewSet):
     queryset = Educacao.objects.all()
     serializer_class = EducacaoSerializer
 
-class ProjetoEducacaoViewSet(ModelViewSet):
+class ProjetoEducacaoViewSet(ReadOnlyModelViewSet):
     queryset = ProjetoEducacao.objects.all()
     serializer_class = ProjetoEducacaoSerializer
 
-class HabilidadeViewSet(ModelViewSet):
+class HabilidadeViewSet(ReadOnlyModelViewSet):
     queryset = Habilidade.objects.all()
     serializer_class = HabilidadeSerializer
