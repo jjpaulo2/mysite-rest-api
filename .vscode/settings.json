@@ -2,5 +2,18 @@
     "python.pythonPath": "/home/jjpaulo2/.local/share/virtualenvs/mysite-mZNl1rfT/bin/python",
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./api",
+        "-p",
+        "tests.py"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "api"
     ]
 }

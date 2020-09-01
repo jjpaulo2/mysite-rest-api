@@ -26,7 +26,11 @@ SECRET_KEY = CONFIG_PARAMS['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'testserver',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -63,7 +67,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
-    ]
+    ],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
 ROOT_URLCONF = 'mysite.urls'

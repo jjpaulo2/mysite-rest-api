@@ -8,6 +8,9 @@ pylint = "*"
 pylint-django = "*"
 autopep8 = "*"
 jedi = "*"
+ipython = "*"
+pytest = "*"
+pytest-django = "*"
 
 [packages]
 django = "==3.1"
