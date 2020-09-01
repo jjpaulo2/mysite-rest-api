@@ -1,4 +1,4 @@
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
 from api.views import ( SobreViewSet, 
                         ParagrafoDescricaoViewSet, 
                         RedeSocialViewSet, 
@@ -7,7 +7,7 @@ from api.views import ( SobreViewSet,
                         ProjetoEducacaoViewSet, 
                         HabilidadeViewSet )
 
-router = routers.DefaultRouter()
+router = DefaultRouter()
 router.register('sobre', SobreViewSet, basename='sobre')
 router.register('paragrafos-descricao', ParagrafoDescricaoViewSet, basename='paragrafos-descricao')
 router.register('redes-sociais', RedeSocialViewSet, basename='redes-sociais')
