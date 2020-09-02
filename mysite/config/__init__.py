@@ -3,6 +3,12 @@ from os import getenv
 
 load_dotenv()
 
+def is_debug():
+    debug = getenv('DEBUG')
+    return debug != '0'
+
+
 CONFIG_PARAMS = {
-    'SECRET_KEY': getenv('SECRET_KEY')
+    'SECRET_KEY': getenv('SECRET_KEY'),
+    'DEBUG': is_debug() 
 }
