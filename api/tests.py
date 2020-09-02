@@ -1,3 +1,6 @@
+from django import setup as django_setup
+django_setup()
+
 from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.test import APIClient, APITestCase
