@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'testserver',
     'localhost',
     '127.0.0.1',
+    'jjpaulo2.herokuapp.com',
 ]
 
 
