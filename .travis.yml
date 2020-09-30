@@ -1,24 +1,25 @@
 language: python
 
 python:
-- '3.8'
+- "3.8"
 
 install:
 - "pip install pipenv"
 - "pipenv install"
-- "pipenv shell"
 
 script:
 - "./manage.py makemigrations"
 - "./manage.py migrate"
 - "./manage.py migrate --run-syncdb"
-- "pipenv run tests"
+
+test_script:
+  - "pipenv run tests"
 
 deploy:
   provider: heroku
+  app: jjpaulo2
   api_key:
     secure: RSOQ15iobG5r3FnxVaSGvrtxruItwE0x3fnQNuLbW9xr/BNQXAZ7Bwzv3qsdQZ5R74TOOtrmz9Jbf9qDpN+IUj9IT6AWVzH3t9BYbFgWqG3q6ZCtlHAwYnoeAhzTn/ZqptEaHBWX6/TlnWYK2fR/9bohpwWS+rm6DQcWh6hGHUe42Q8TSnb8yziPrKB6Bc7M+A14loAwzmWC1aaPe87qqUre36NZrMakNKmnU151Rv3f832HuOEeRynl9OFuBUlxsrUrKSF21rf8LI7lAXvCsJjPrMeV9DscVcyfSf27dmx1dpQ3ACOicR7E75ikeRPHqv38rd0id+Xf+WgVgD97xuyNGMNsYIFcc1OxMgBEQB0Kay+7QTUkFwNmJTHEj3OsDlvbwBdGXDBrEyXdt/L5HEu+/tCHd0oli0/r23G8PGz0r0E2g3tFDvq6Y4npIkDEwuLp6XA9VPEfpnKSsRuBHTCLbm1cT0Z+q5B5K2XEvn3yjOjlv/F/C92lu7uvu0cn4ayl2unQiDIC2jNe2zQkxPmbpTeShv2PjbcGSg5UxbEkcjZI/5xr+Wcw2C2ATXOGnd5NNd0AhshVB1lH5OHgvXoi0+Une+sI9FupVeZzrJYpCxdmrTICYSDSBpLCnkBcUY3WxyReRuq2yksQG2LnRFCvlpggk4hOJbPmhtcKLHM=
-  app: jjpaulo2
   run:
     - "python ./manage.py makemigrations"
     - "python ./manage.py migrate"
