@@ -1,5 +1,4 @@
 language: python
-
 python:
   - '3.8'
 
@@ -18,10 +17,10 @@ test_script:
 deploy:
   provider: heroku
   api_key:
-    secure: ZyEuygbLFd2heUqpW97lEo02SZFB8OW/LAT1Oc2uohoTAQ1T3jIQ1t0Zkf9KfExNreYbFpKRedbmtgeuC/vSCgMYcJtZjaFlNPn4dkRHrz15YTH09oXdZSwh5ENgcsjLgSJSP5Ez4/T9bixjnOIogH+ak2W0rsh+V4iQhjPu/14Ue1a8dOpDTqXwwgJw7N/1VeYGzeNnQGv1+lL6wstMNpeS6cYXdxbpJh/O0fwdn/1Ej0lIVQDz5z+v4dK9te1NhQEz19moPrGlKML7YSc95kCMy3vFoFqBrdaAY9wokY8DKfC6VrJGU0cCW523zcBrXMmfn4xLQbLNMzk4WR8tmMwyTV/TYdlXG3Bx6z0CaDZXSVMI31kIaTuaVUoGgk7+NgyQfjVz78YNVXTZ3RzMe33NGV6g2OVI0xhFZ4O+XzyrXyWV4yq0haa/L33pPJqpzd1lBk9GppOMEf9iOHNOgRvF4mEHkf0aW1xqY+ABaqFevNfuqKix0MNvhYCX/dFKgJqgeRldV5+c6DD9wtSNyB6PMFyVl5vrl3AJYJJG2XQXaW9utYrAYHT6bu0PXzA1m378SlIMGV6Ur7OmlRfAZYaVRQtNaaQ73kN0oYN0KFKo/3bEDzm+HuYF98iYwXXJSyUjBeeDPx3p4Wh+fVf+PT/ROoz+KAn7ZQE3J2iG3ds=
+    secure: KM5eFG/c1iwkiYkRYK3mhXRGojJcRcJqT3DJ2oBXjbVZG34/4w2PSQY6jNT8H2PD0Yg6OjdRoPFvuWGMTOCsjKxGNtKX+DXmy+QHw6MqMbQ4MryQOt6ZTp+ekbN7ukcRb0Z3dsslK4xCHtqPz0Ozf9YMnhZlllLtM7grti8dwrI+bWBQn6I4/V9svYeDm6FWSJJZYHMc5+6kfRKvDQ+7pAv6GEu/SgVa8tCAejcBEU1o0oPU1em0eM9SXUHEvJAJIjS2JS0eC4YvXcAqCoW0btqVsvWyvYm8l9M8xdss/m+/dhUSoVlk3T5VdbQgAsI+7rAxXcain1qM9Celas2jeBx8MXS4SA7LZiuD1rbqjhF+QH1vIAYYRBV5KT1v6axSOk/TfdES/A693TrUF/xuvdsCrD1JZKXLkoQfGe6FiK4DX8w2J2mvDjCqSp3lPyobmk94KwXaTuGaOegWzeeYFvOeTKpOZoLdXlvnmL3YX1U99eP1xbbjElSqL/wU3VOzZwzU2/y/EoKKSWwWJnOx91F+QpnGnRNQQPcK0nAJJEtlTqIIvNeKO4bUdIacd99SaFwgAWspiKo4CYrM+EDR5RZOXlXa//GRs5rxLtV1oHnpfOJnkjcim8KU4mshyP5Y5vsWoea+uoLfUahCzkkwwPfA14yn454l4tYxs4VkNuk=
   app: jjpaulo2
   edge: true
   run:
-  - python ./manage.py makemigrations
-  - python ./manage.py migrate
-  - python ./manage.py migrate --run-syncdb
+    - python ./manage.py makemigrations
+    - python ./manage.py migrate
+    - python ./manage.py migrate --run-syncdb
