@@ -20,6 +20,7 @@ deploy:
   api_key:
     secure: ZyEuygbLFd2heUqpW97lEo02SZFB8OW/LAT1Oc2uohoTAQ1T3jIQ1t0Zkf9KfExNreYbFpKRedbmtgeuC/vSCgMYcJtZjaFlNPn4dkRHrz15YTH09oXdZSwh5ENgcsjLgSJSP5Ez4/T9bixjnOIogH+ak2W0rsh+V4iQhjPu/14Ue1a8dOpDTqXwwgJw7N/1VeYGzeNnQGv1+lL6wstMNpeS6cYXdxbpJh/O0fwdn/1Ej0lIVQDz5z+v4dK9te1NhQEz19moPrGlKML7YSc95kCMy3vFoFqBrdaAY9wokY8DKfC6VrJGU0cCW523zcBrXMmfn4xLQbLNMzk4WR8tmMwyTV/TYdlXG3Bx6z0CaDZXSVMI31kIaTuaVUoGgk7+NgyQfjVz78YNVXTZ3RzMe33NGV6g2OVI0xhFZ4O+XzyrXyWV4yq0haa/L33pPJqpzd1lBk9GppOMEf9iOHNOgRvF4mEHkf0aW1xqY+ABaqFevNfuqKix0MNvhYCX/dFKgJqgeRldV5+c6DD9wtSNyB6PMFyVl5vrl3AJYJJG2XQXaW9utYrAYHT6bu0PXzA1m378SlIMGV6Ur7OmlRfAZYaVRQtNaaQ73kN0oYN0KFKo/3bEDzm+HuYF98iYwXXJSyUjBeeDPx3p4Wh+fVf+PT/ROoz+KAn7ZQE3J2iG3ds=
   app: jjpaulo2
+  edge: true
   run:
   - python ./manage.py makemigrations
   - python ./manage.py migrate
