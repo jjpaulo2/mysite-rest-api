@@ -1,6 +1,6 @@
 # My Site Rest API
 
-[![Build Status](https://travis-ci.org/jjpaulo2/mysite-rest-api.svg?branch=master)](https://travis-ci.org/jjpaulo2/mysite-rest-api)
+[![Build Status](https://travis-ci.com/jjpaulo2/mysite-rest-api.svg?branch=master)](https://travis-ci.com/jjpaulo2/mysite-rest-api)
 
 This repository contains the source code from my GitHub personal's website back-end. It was made with [**Django**](https://www.djangoproject.com/) and [**Django Rest Framework**](https://www.django-rest-framework.org).
 
