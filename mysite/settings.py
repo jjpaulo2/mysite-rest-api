@@ -30,6 +30,7 @@ DEBUG = CONFIG_PARAMS['DEBUG']
 ALLOWED_HOSTS = [
     'testserver',
     'localhost',
+    'localhost:4200',
     '127.0.0.1',
     'jjpaulo2.herokuapp.com',
 ]
