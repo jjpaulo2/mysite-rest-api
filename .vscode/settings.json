@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/jjpaulo2/.local/share/virtualenvs/mysite-mZNl1rfT/bin/python",
+    "python.pythonPath": "/home/jjpaulo2/.local/share/virtualenvs/rest-api-TZ_GwPEN/bin/python",
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
     ],

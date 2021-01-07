@@ -3,6 +3,7 @@ from django.db.models import ( Model,
                                TextField, 
                                IntegerField, 
                                OneToOneField, 
+                               ImageField,
                                CASCADE )
 
 class Sobre(Model):
@@ -42,4 +43,9 @@ class ProjetoEducacao(Model):
 class Habilidade(Model):
     titulo = CharField(max_length=50)
     icone = CharField(max_length=20, verbose_name='Classe de ícone do DevIcon')
-    nivel = IntegerField()
+    descricao = TextField(default=None)
+
+class Portfolio(Model):
+    titulo = CharField(max_length=100)
+    descricao = TextField()
+    gif = ImageField(upload_to='portfolio')

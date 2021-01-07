@@ -5,7 +5,8 @@ from api.models import ( Sobre,
                          Experiencia, 
                          Educacao, 
                          ProjetoEducacao, 
-                         Habilidade )
+                         Habilidade,
+                         Portfolio )
 
 class SobreSerializer(ModelSerializer):
     class Meta:
@@ -40,4 +41,9 @@ class ProjetoEducacaoSerializer(ModelSerializer):
 class HabilidadeSerializer(ModelSerializer):
     class Meta:
         model = Habilidade
-        fields = ['titulo', 'icone', 'nivel']
+        fields = ['titulo', 'icone', 'descricao']
+
+class PortfolioSerializer(ModelSerializer):
+    class Meta:
+        model = Portfolio
+        fields = ['titulo', 'descricao', 'gif']

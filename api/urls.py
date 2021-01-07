@@ -5,7 +5,8 @@ from api.views import ( SobreViewSet,
                         ExperienciaViewSet, 
                         EducacaoViewSet, 
                         ProjetoEducacaoViewSet, 
-                        HabilidadeViewSet )
+                        HabilidadeViewSet,
+                        PortfolioViewSet )
 
 router = DefaultRouter()
 router.register('sobre', SobreViewSet, basename='sobre')
@@ -15,3 +16,4 @@ router.register('experiencia', ExperienciaViewSet, basename='experiencia')
 router.register('educacao', EducacaoViewSet, basename='educacao')
 router.register('projetos-educacao', ProjetoEducacaoViewSet, basename='projetos-educacao')
 router.register('habilidades', HabilidadeViewSet, basename='habilidades')
+router.register('portfolio', PortfolioViewSet, basename='portfolio')

@@ -5,7 +5,8 @@ from api.models import ( Sobre,
                          Experiencia, 
                          Educacao, 
                          ProjetoEducacao, 
-                         Habilidade )
+                         Habilidade,
+                         Portfolio )
 
 # Register your models here.
 admin.site.register(Sobre)
@@ -15,3 +16,4 @@ admin.site.register(Experiencia)
 admin.site.register(Educacao)
 admin.site.register(ProjetoEducacao)
 admin.site.register(Habilidade)
+admin.site.register(Portfolio)
