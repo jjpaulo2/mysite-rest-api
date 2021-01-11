@@ -19,6 +19,8 @@ python-dotenv = "==0.14"
 gunicorn = "==20.0"
 django-heroku = "==0.3"
 pillow = "*"
+django-storages = "*"
+dropbox = "*"
 
 [requires]
 python_version = "3.8"

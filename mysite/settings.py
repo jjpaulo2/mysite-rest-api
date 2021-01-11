@@ -139,5 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = CONFIG_PARAMS['DROPBOX_OAUTH2_TOKEN']
 
 django_heroku_settings(locals())
