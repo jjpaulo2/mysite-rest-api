@@ -1,4 +1,6 @@
 from django import setup as django_setup
+from os import environ
+environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 django_setup()
 
 from django.contrib.auth.models import User
@@ -56,6 +58,11 @@ class TestAuthenticatedAllowedMethods(APITestCase):
 
     def test_get_habilidades(self):
         url = '/habilidades/'
+        response = self.client.get(url, **self.request_header)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_portfolio(self):
+        url = '/portfolio/'
         response = self.client.get(url, **self.request_header)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -170,6 +177,22 @@ class TestAuthenticatedDenyMethods(APITestCase):
         response = self.client.delete(url, **self.request_header)
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
+    def test_post_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.post(url, **self.request_header)
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def test_put_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.put(url, **self.request_header)
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def test_delete_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.delete(url, **self.request_header)
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
 class TestNonAuthenticatedAllMethods(APITestCase):
 
     def setUp(self):
@@ -178,7 +201,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_sobre(self):
         url = '/sobre/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_sobre(self):
         url = '/sobre/'
@@ -198,7 +221,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_paragrafos_descricao(self):
         url = '/paragrafos-descricao/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_paragrafos_descricao(self):
         url = '/paragrafos-descricao/'
@@ -218,7 +241,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_redes_sociais(self):
         url = '/redes-sociais/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_redes_sociais(self):
         url = '/redes-sociais/'
@@ -238,7 +261,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_experiencia(self):
         url = '/experiencia/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_experiencia(self):
         url = '/experiencia/'
@@ -258,7 +281,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_educacao(self):
         url = '/educacao/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_educacao(self):
         url = '/educacao/'
@@ -278,7 +301,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_projetos_educacao(self):
         url = '/projetos-educacao/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_projetos_educacao(self):
         url = '/projetos-educacao/'
@@ -298,7 +321,7 @@ class TestNonAuthenticatedAllMethods(APITestCase):
     def test_get_habilidades(self):
         url = '/habilidades/'
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_post_habilidades(self):
         url = '/habilidades/'
@@ -312,5 +335,25 @@ class TestNonAuthenticatedAllMethods(APITestCase):
 
     def test_delete_habilidades(self):
         url = '/habilidades/'
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_get_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_post_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_put_portfolio(self):
+        url = '/portfolio/'
+        response = self.client.put(url)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_delete_portfolio(self):
+        url = '/portfolio/'
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
