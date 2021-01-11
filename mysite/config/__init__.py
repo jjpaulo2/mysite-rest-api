@@ -10,5 +10,6 @@ def is_debug():
 
 CONFIG_PARAMS = {
     'SECRET_KEY': getenv('SECRET_KEY'),
-    'DEBUG': is_debug() 
+    'DROPBOX_OAUTH2_TOKEN': getenv('DROPBOX_OAUTH2_TOKEN'),
+    'DEBUG': is_debug(),
 }
