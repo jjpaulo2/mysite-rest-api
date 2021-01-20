@@ -52,7 +52,14 @@ class EducacaoViewSet(ReadOnlyModelViewSet):
 class ProjetoEducacaoViewSet(ReadOnlyModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    queryset = ProjetoEducacao.objects.all()
+    def get_queryset(self):
+        queryset = ProjetoEducacao.objects.all()
+        instituicao = self.request.query_params.get('instituicao', None)
+        if instituicao is not None:
+            queryset = queryset.filter(instituicao=instituicao)
+        
+        return queryset
+
     serializer_class = ProjetoEducacaoSerializer
 
 class HabilidadeViewSet(ReadOnlyModelViewSet):
