@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, SerializerMethodField, PrimaryKeyRelatedField
 from api.models import ( Sobre, 
                          ParagrafoDescricao, 
                          RedeSocial, 
@@ -28,15 +28,17 @@ class ExperienciaSerializer(ModelSerializer):
         model = Experiencia
         fields = ['empresa', 'cargo', 'inicio', 'fim', 'descricao']
 
-class EducacaoSerializer(ModelSerializer):
-    class Meta:
-        model = Educacao
-        fields = ['instituicao', 'titulo', 'inicio', 'fim']
-
 class ProjetoEducacaoSerializer(ModelSerializer):
     class Meta:
         model = ProjetoEducacao
-        fields = ['instituicao', 'titulo', 'ano', 'descricao']
+        fields = ['titulo', 'ano', 'descricao']
+
+class EducacaoSerializer(ModelSerializer):
+    projetos = ProjetoEducacaoSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Educacao
+        fields = ['instituicao', 'titulo', 'inicio', 'fim', 'projetos']
 
 class HabilidadeSerializer(ModelSerializer):
     class Meta:
