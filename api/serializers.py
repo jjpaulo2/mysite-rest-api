@@ -11,7 +11,7 @@ from api.models import ( Sobre,
 class SobreSerializer(ModelSerializer):
     class Meta:
         model = Sobre
-        fields = ['nome', 'sobrenome', 'cidade', 'telefone', 'lattes']
+        fields = ['nome', 'sobrenome', 'cidade', 'telefone', 'lattes', 'foto']
 
 class ParagrafoDescricaoSerializer(ModelSerializer):
     class Meta:
