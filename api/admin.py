@@ -16,13 +16,22 @@ class MyAPIAdminSite(admin.AdminSite):
 
 admin.site = MyAPIAdminSite()
 
-admin.site.register(Sobre)
 admin.site.register(ParagrafoDescricao)
 admin.site.register(RedeSocial)
 admin.site.register(Experiencia)
 admin.site.register(Educacao)
 admin.site.register(ProjetoEducacao)
 admin.site.register(Habilidade)
+
+@admin.register(Sobre, site=admin.site)
+class SobreAdmin(admin.ModelAdmin):
+    readonly_fields = ('previa_da_foto',)
+
+    def previa_da_foto(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%;"/>'.format(
+                url = obj.foto.url
+            )
+        )
 
 @admin.register(Portfolio, site=admin.site)
 class PortfolioAdmin(admin.ModelAdmin):
