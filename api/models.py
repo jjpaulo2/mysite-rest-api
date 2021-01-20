@@ -92,8 +92,8 @@ class Habilidade(Model):
         return f'{self.titulo}: {self.descricao[0:10]}...'
 
     class Meta:
-        verbose_name = 'projeto realizado durante formação'
-        verbose_name_plural = 'projetos'
+        verbose_name = 'habilidade/tecnologia'
+        verbose_name_plural = 'habilidades'
 
 class Portfolio(Model):
     titulo = CharField(max_length=100)
