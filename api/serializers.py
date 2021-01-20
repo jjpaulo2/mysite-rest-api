@@ -31,7 +31,7 @@ class ExperienciaSerializer(ModelSerializer):
 class EducacaoSerializer(ModelSerializer):
     class Meta:
         model = Educacao
-        fields = ['instituicao', 'titulo', 'inicio', 'fim', 'descricao']
+        fields = ['instituicao', 'titulo', 'inicio', 'fim']
 
 class ProjetoEducacaoSerializer(ModelSerializer):
     class Meta:
