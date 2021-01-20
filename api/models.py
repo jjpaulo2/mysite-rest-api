@@ -2,7 +2,8 @@ from django.db.models import ( Model,
                                CharField, 
                                TextField, 
                                IntegerField, 
-                               OneToOneField, 
+                               OneToOneField,
+                               ForeignKey,
                                ImageField,
                                CASCADE )
 
@@ -70,7 +71,7 @@ class Educacao(Model):
         verbose_name_plural = 'formações'
 
 class ProjetoEducacao(Model):
-    instituicao = OneToOneField(Educacao, on_delete=CASCADE)
+    instituicao = ForeignKey(Educacao, on_delete=CASCADE)
     titulo = CharField(max_length=100)
     ano = IntegerField()
     descricao = CharField(max_length=500)
