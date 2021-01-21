@@ -18,9 +18,10 @@ djangorestframework = "==3.11"
 python-dotenv = "==0.14"
 gunicorn = "==20.0"
 django-heroku = "==0.3"
-pillow = "*"
-django-storages = "*"
-dropbox = "*"
+pillow = "==8.1"
+django-storages = "1.11"
+dropbox = "==11.0"
+django-cors-headers = "==3.6"
 
 [requires]
 python_version = "3.8"
