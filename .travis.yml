@@ -1,26 +1,22 @@
 language: python
 python:
-  - '3.8'
-
+- '3.8'
 install:
-  - pip install pipenv
-  - pipenv install
-
+- pip install pipenv
+- pipenv install
 script:
-  - "./manage.py makemigrations"
-  - "./manage.py migrate"
-  - "./manage.py migrate --run-syncdb"
-
+- "./manage.py makemigrations"
+- "./manage.py migrate"
+- "./manage.py migrate --run-syncdb"
 test_script:
-  - pipenv run tests
-
+- pipenv run tests
 deploy:
   provider: heroku
   api_key:
-    secure: KM5eFG/c1iwkiYkRYK3mhXRGojJcRcJqT3DJ2oBXjbVZG34/4w2PSQY6jNT8H2PD0Yg6OjdRoPFvuWGMTOCsjKxGNtKX+DXmy+QHw6MqMbQ4MryQOt6ZTp+ekbN7ukcRb0Z3dsslK4xCHtqPz0Ozf9YMnhZlllLtM7grti8dwrI+bWBQn6I4/V9svYeDm6FWSJJZYHMc5+6kfRKvDQ+7pAv6GEu/SgVa8tCAejcBEU1o0oPU1em0eM9SXUHEvJAJIjS2JS0eC4YvXcAqCoW0btqVsvWyvYm8l9M8xdss/m+/dhUSoVlk3T5VdbQgAsI+7rAxXcain1qM9Celas2jeBx8MXS4SA7LZiuD1rbqjhF+QH1vIAYYRBV5KT1v6axSOk/TfdES/A693TrUF/xuvdsCrD1JZKXLkoQfGe6FiK4DX8w2J2mvDjCqSp3lPyobmk94KwXaTuGaOegWzeeYFvOeTKpOZoLdXlvnmL3YX1U99eP1xbbjElSqL/wU3VOzZwzU2/y/EoKKSWwWJnOx91F+QpnGnRNQQPcK0nAJJEtlTqIIvNeKO4bUdIacd99SaFwgAWspiKo4CYrM+EDR5RZOXlXa//GRs5rxLtV1oHnpfOJnkjcim8KU4mshyP5Y5vsWoea+uoLfUahCzkkwwPfA14yn454l4tYxs4VkNuk=
-  app: jjpaulo2
+    secure: rr+JWIxyEmwzhC8MuZCISX5/kmjm1CXuTbMhtiW9TJwVnjbQh3YAPcoJGg+8mD5KROPZ1ABTKhTqcemId5ptbgL1QExKKB6dJZbu9UUC5UwPYKXgInmAt7nWEimEqnzRGm6eyIxWbCDR895vNfWcHA9ybckB+dWruTcgnSsFo08n0ZqOfogMOldh1RluOlhTI0YgdhCSA5rqvqL22g42hDITYQ1WC77aaNv0/i6tNoQa1E2wsm6K7R1HBidJah7dbv1SpuhRYlxCjkgS9hgVk/At7w/XYJEj3VBtf/yNLQxUT0445Z82yiMXW1tTYA8jHbtVTMiVJIx5j7z200sBKDZw8In+3epD30WPsmjyG75Vx48u5FEDEVMqK1WVdNpX7uo4SKyTx5+nDaU7tCBm4Go8LfAetM5clvxBlcUHfFm36EAVpWQyyp7KUy+csHpL4WPM30p6kF7FJemlQis968B8OXnuz+A2A+0Ht3Pv5R4oDCIvtlTqsLvqx49KlqWB9z+ZOmFS7zkT2wF6IrbUQh1cdEpgchViUMB8fUB4RpHTn0rcnkYXMNcg0TtcQe7A+4s25bhOWPh3NubmaFwJ7faKZhcjJce2gWB6BDoTkW8RfKErY0kXQMAX6bcBgKhdeoeP9kllpEwB4BZIsOwFkSgBeEBnidFanqXAYYUXzx4=
+  app: jjpaulo2-api
   edge: true
   run:
-    - python ./manage.py makemigrations
-    - python ./manage.py migrate
-    - python ./manage.py migrate --run-syncdb
+  - python ./manage.py makemigrations
+  - python ./manage.py migrate
+  - python ./manage.py migrate --run-syncdb
