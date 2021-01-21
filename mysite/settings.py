@@ -37,9 +37,12 @@ ALLOWED_HOSTS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'localhost:8000',
-    'localhost:8080',
-    'jjpaulo2-website.herokuapp.com'
+    'http://localhost:8000',
+    'http://localhost:8080',
+    'https://jjpaulo2-website.herokuapp.com',
+    'http://jjpaulo2-website.herokuapp.com',
+    'https://jjpaulo2.herokuapp.com',
+    'http://jjpaulo2.herokuapp.com'
 ]
 
 # Application definition
