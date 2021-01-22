@@ -28,7 +28,7 @@ class SobreViewSet(ReadOnlyModelViewSet):
 class ParagrafoDescricaoViewSet(ReadOnlyModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    queryset = ParagrafoDescricao.objects.all()
+    queryset = ParagrafoDescricao.objects.all().order_by('id')
     serializer_class = ParagrafoDescricaoSerializer
 
 class RedeSocialViewSet(ReadOnlyModelViewSet):
