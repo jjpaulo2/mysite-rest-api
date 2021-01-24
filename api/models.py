@@ -3,6 +3,7 @@ from django.db.models import ( Model,
                                TextField, 
                                IntegerField, 
                                OneToOneField,
+                               EmailField,
                                ForeignKey,
                                ImageField,
                                CASCADE )
@@ -12,6 +13,7 @@ class Sobre(Model):
     sobrenome = CharField(max_length=50)
     cidade = CharField(max_length=50)
     telefone = CharField(max_length=20)
+    email = EmailField(null=True, blank=True, default=None)
     lattes = CharField(max_length=255)
     foto = ImageField(upload_to='perfil', blank=True, null=True, default=None)
 
